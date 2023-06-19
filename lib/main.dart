@@ -32,58 +32,56 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
-final mapController  = MapController.withPosition(
-            initPosition: GeoPoint(
-              latitude: 47.9,
-              longitude: 11.7,
-          ),
-);
+  final mapController = MapController.withPosition(
+    initPosition: GeoPoint(
+      latitude: 47.9,
+      longitude: 11.7,
+    ),
+  );
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
-        ),
-        body: OSMFlutter( 
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: OSMFlutter(
         controller: mapController,
         userTrackingOption: UserTrackingOption(
-           enableTracking: true,
-           unFollowUser: false,
+          enableTracking: true,
+          unFollowUser: true,
         ),
         initZoom: 11,
         minZoomLevel: 10,
         maxZoomLevel: 19,
         stepZoom: 1.0,
         userLocationMarker: UserLocationMaker(
-            personMarker: MarkerIcon(
-                icon: Icon(
-                    Icons.location_history_rounded,
-                    color: Colors.red,
-                    size: 48,
-                ),
+          personMarker: MarkerIcon(
+            icon: Icon(
+              Icons.person,
+              color: Colors.blue,
+              size: 48,
             ),
-            directionArrowMarker: MarkerIcon(
-                icon: Icon(
-                    Icons.double_arrow,
-                    size: 48,
-                ),
+          ),
+          directionArrowMarker: MarkerIcon(
+            icon: Icon(
+              Icons.double_arrow,
+              size: 48,
             ),
+          ),
         ),
-         roadConfiguration: RoadOption(
-                roadColor: Colors.yellowAccent,
+        roadConfiguration: RoadOption(
+          roadColor: Colors.yellowAccent,
         ),
         markerOption: MarkerOption(
             defaultMarker: MarkerIcon(
-                icon: Icon(
-                  Icons.person_pin_circle,
-                  color: Colors.blue,
-                  size: 56,
-                  ),
-                )
-        ),
-    ),
+          icon: Icon(
+            Icons.person_pin_circle,
+            color: Colors.blue,
+            size: 56,
+          ),
+        )),
+      ),
     );
   }
 } //Video @ 5:00
