@@ -32,12 +32,25 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  // ORIGINAL MapController
+  /*
   final mapController = MapController.withPosition(
     initPosition: GeoPoint(
       latitude: 47.9,
       longitude: 11.7,
     ),
   );
+  */
+
+  final mapController = MapController.publicTransportationLayer(
+    initPosition: GeoPoint(
+      latitude: 47.9,
+      longitude: 11.7,
+    ),
+    
+  );
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -69,9 +82,6 @@ class _MyHomePageState extends State<MyHomePage> {
               size: 48,
             ),
           ),
-        ),
-        roadConfiguration: const RoadOption(
-          roadColor: Colors.yellowAccent,
         ),
         markerOption: MarkerOption(
             defaultMarker: const MarkerIcon(
