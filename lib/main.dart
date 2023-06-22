@@ -47,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: OSMFlutter(
         controller: mapController,
-        userTrackingOption: UserTrackingOption(
+        userTrackingOption: const UserTrackingOption(
           enableTracking: true,
           unFollowUser: true,
         ),
@@ -56,25 +56,25 @@ class _MyHomePageState extends State<MyHomePage> {
         maxZoomLevel: 19,
         stepZoom: 1.0,
         userLocationMarker: UserLocationMaker(
-          personMarker: MarkerIcon(
+          personMarker: const MarkerIcon(
             icon: Icon(
               Icons.person,
               color: Colors.blue,
               size: 48,
             ),
           ),
-          directionArrowMarker: MarkerIcon(
+          directionArrowMarker: const MarkerIcon(
             icon: Icon(
               Icons.double_arrow,
               size: 48,
             ),
           ),
         ),
-        roadConfiguration: RoadOption(
+        roadConfiguration: const RoadOption(
           roadColor: Colors.yellowAccent,
         ),
         markerOption: MarkerOption(
-            defaultMarker: MarkerIcon(
+            defaultMarker: const MarkerIcon(
           icon: Icon(
             Icons.person_pin_circle,
             color: Colors.blue,
